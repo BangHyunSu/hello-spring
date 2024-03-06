@@ -37,4 +37,7 @@ public class MemberService {
     public Optional<Member> findOne(Long memberId) {
         return memberRepository.findByid(memberId);
     }
+
+    //회원 여러명 조회
+
 }
