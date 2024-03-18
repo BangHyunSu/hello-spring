@@ -4,14 +4,16 @@ import hello.hellospring.domain.Member;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
-@Repository
+
 public class MemoryMemberRepository implements MemberRepository{
 
-    private static Map<Long, Member> store = new HashMap<>();
-    private static long sequence = 0L;
+    private static Map<Long, Member> store = new HashMap<>(); // save 를 할 때 저장을 어디다 해야되므로 map 사용
+    private static long sequence = 0L; // 0,1,2 같이 key 값을 생성해줌
+
+    //동시성 문제로 위와 같은 코드는 실무에서는 사용 안하지만 예제니까 사용
     @Override
     public Member save(Member member) {
-        member.setId(++sequence);
+        member.setId(++sequence); // 시퀀스 값을 하나 올려줌
         store.put(member.getId(), member);
         return member;
     }

@@ -26,8 +26,8 @@ public class MemoryMemberRepositoryTest {
         repository.save(member);
 
         Member result = repository.findByid(member.getId()).get(); //optional 은 get 으로 꺼낼 수 있다. 좋은 방법은 아님 테스트니까~
-
-        assertThat(member).isEqualTo(result);
+        assertThat(member).isEqualTo(result); //org.assertJ 에 assertThat 이다 조금 더 편하게 쓰게 해줌
+        //option + enter 로 static import 해줌 (Assert. 을 없애줌)
     }
 
     @Test
