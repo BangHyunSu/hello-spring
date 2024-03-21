@@ -39,4 +39,14 @@ public class MemberController {
         model.addAttribute("members" , members);
         return "members/memberList";
     }
+
+    @GetMapping("/membersa")
+    public String listd(Model model) {
+        return "a";
+    }
+
+    @GetMapping("/membersa")
+    public String listd(Model model) {
+        return "a";
+    }
 }
