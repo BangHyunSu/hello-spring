@@ -41,7 +41,7 @@ public class MemberService {
 
     //회원 한명 조회?
     public Optional<Member> findOne(Long memberId) {
-        return memberRepository.findByid(memberId);
+        return memberRepository.findById(memberId);
     }
 
     //회원 여러명 조회
